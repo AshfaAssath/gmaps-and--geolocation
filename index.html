@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <title>Maps and Geolocation</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="my-location" class="col-6">
+                <button id="location-button" class="btn btn-dark">User Location</button>
+                <h5 id="text-title">Enter <br>your<br> location: </h5>
+                    <form  id="location-form">
+                        <input type="text" id="location-input">
+                        <br>
+                        <button type="submit">Submit</button>
+                    </form>
+                    
+            </div>
+            <div id="directions" class="col-6">
+                <h5>Get<br> the <br>directions</h5>
+                        <div id="direction-form">
+                            <div id="dir-start" >
+                                <label for="start"><img src="./icons/common/start.png"></label>
+                                    <select id='start'>
+                                            <option name="Best Western Premier C Hotel by Carmen's" value="43.1943209959493,-79.8226782303895"> Best Western Premier C Hotel</option>
+                                            <option name="Staybridge Suites" value="43.2580063229464,-79.8762525925937">Staybridge Suites
+                                            </option>
+                                            <option name="Courtyard by Marriott" value="43.2154931500936,-79.8889247185588">Courtyard by Marriott
+                                            </option>
+                                            <option name="Days Inn Hamilton" value="43.2529443818711,-79.861448793337">Days Inn Hamilton
+                                            </option>
+                                            <option name="Admiral Inn Hamilton" value="43.26754482797,-79.8859519795869">Admiral Inn Hamilton
+                                            </option>
+                                            <option name="Comfort Inn Hamilton" value="43.2349568760296,-79.7620837503092">Comfort Inn Hamilton
+                                            </option>
+                                            <option name="Quality Hotel Hamilton" value="43.2443227988696,-79.7592802374877">Quality Hotel Hamilton
+                                            </option>
+                                            <option name="Sheraton Hamilton Hotel" value="43.257965513317,-79.872063720161">Sheraton Hamilton Hotel
+                                            </option>
+                                            <option name="Visitors Inn" value="43.2599858127968,-79.8966373290835">Visitors Inn
+                                            </option>
+                                            <option name="Hamilton Plaza Hotel" value="43.2548540342615,-79.8645284794698">Hamilton Plaza Hotel
+                                            </option>
+                                            <option name="Hamilton International Airport" value="43.2548540342615,-79.8645284794698">Hamilton International Airport
+                                            </option>
+                                            <option name="Stoney Creek Agricultural Airport" value="43.2548540342615,-79.8645284794698">Stoney Creek Agricultural Airport
+                                            </option>
+                                            <option name="Glider Flying Club" value="43.2548540342615,-79.8645284794698">Glider Flying Club
+                                            </option>
+                                            <option name="Beverly Arena" value="43.2985097580034,-80.1113269823054">Beverly Arena
+                                            </option>
+                                            <option name="Bill Friday Lawfield Arena" value="43.2148401210284,-79.8507511804875">Bill Friday Lawfield Arena
+                                            </option>
+                                            <option name="Carlisle Arena" value="43.3967784960581,-79.9813199607619">Carlisle Arena
+                                            </option>
+                                            <option name="Coronation Arena" value="43.2646441220182,-79.8962604753025">Coronation Arena
+                                            </option>
+                                            <option name="Eastwood Arena" value="43.2724188501252,-79.8563297984862">Eastwood Arena
+                                            </option>
+                                            <option name="Glanbrook Arena" value="43.1300300291582,-79.8387049818608">Glanbrook Arena
+                                            </option>
+                                            <option name="Harry Howell Arena" value="43.3130883838652,-79.9227884041725">Harry Howell Arena
+                                            </option>
+                                            <option name="Inch Park Arena" value="43.2370651664004,-79.8595960406354">Inch Park Arena
+                                            </option>
+                                            <option name="John Bayus Park" value="43.3360327677934,-80.2123361290875">John Bayus Park
+                                            </option>
+                                            <option name="Flamboro Valley Camping Resort" value="43.3884885932545,-80.0776488050427">Flamboro Valley Camping Resort
+                                            </option>
+                                            <option name="Fifty Point Campground" value="43.2200504840909,-79.6264160006303">Fifty Point Campground
+                                            </option>
+                                            <option name="Maple Grove Trailer Park" value="43.4092442492297,-80.1257579295668">Maple Grove Trailer Park
+                                            </option>
+                                            <option name="Lawson Park" value="43.4178111249237,-80.0022830634885">Lawson Park
+                                            </option>
+                                            <option name="Chedoke Hospital" value="43.2401015921982,-79.8465907280101">Chedoke Hospital
+                                            </option>
+                                            <option name="Hamilton General Hospital" value="43.2619434924913,-79.8543349326316">Hamilton General Hospital
+                                            </option>
+                                            <option name="Juravinski Hospital" value="43.2401305772068,-79.8450013402939">Juravinski Hospital
+                                            </option>
+                                            <option name="St. Peter's Hospital" value="43.2447575877267,-79.8368705723942">St. Peter's Hospital
+                                            </option>
+                                            <option name="Ancaster Library" value="43.2253091733592,-79.9766606319237">Ancaster Library
+                                            </option>
+                                            <option name="Barton Library" value="43.2580316991577,-79.8412189807792">Barton Library
+                                            </option>
+                                            <option name="Binbrook Library" value="43.1217043785817,-79.8034294718697">Binbrook Library
+                                            </option>
+                                            <option name="Concession Library" value="43.2410415989336,-79.8513682513742">Concession Library
+                                            </option>
+                                            <option name="Hamilton Central Library" value="43.2589415605285,-79.8706997154247">Hamilton Central Library
+                                            </option>
+                                            <option name="Kenilworth Library" value="43.2434982368949,-79.8088416290449">Kenilworth Library
+                                            </option>
+                                            <option name="Locke Library" value="43.2518228540434,-79.8870220381501">Locke Library
+                                            </option>
+                                            <option name="Red Hill Library" value="43.2302821141234,-79.7719447194834">Red Hill Library
+                                            </option>
+                                            <option name="Absinthe" value="43.2570,-79.8676">Absinthe
+                                            </option>
+                                            <option name="Ale House" value="43.2200,-79.8431">Ale House
+                                            </option>
+                                            <option name="Artword Artbar" value="43.2634,-79.8667">Artword Artbar
+                                            </option>
+                                            <option name="Augusta House" value="43.2521,-79.8703">Augusta House
+                                            </option>
+                                            <option name="Bay City Music Hall" value="43.2736,-79.8664">Bay City Music Hall
+                                            </option>
+                                            <option name="Boon's House" value="43.2475,-79.7980">Boon's House
+                                            </option>
+                                            <option name="Lyric Theatre" value="43.2606,-79.8822">Lyric Theatre
+                                            </option>
+                                            <option name="Dundurn National Historic Site" value="43.2694704660225,-79.8841848584005">Dundurn National Historic Site
+                                            </option>
+                                            <option name="The Hamilton Military Museum" value="43.2681814438482,-79.8847110509391">The Hamilton Military Museum
+                                            </option>
+                                            <option name="Art Gallery of Hamilton" value="43.2572413238943,-79.8724073684872">Art Gallery of Hamilton
+                                            </option>
+                                            <option name="Canadian Football Hall of Fame and Museum" value="43.2518254433982,-79.8312295724646">Canadian Football Hall of Fame and Museum
+                                            </option>
+                                            <option name="Hamilton Children's Museum" value="43.2435277802489,-79.8257510000106">Hamilton Children's Museum
+                                            </option>
+                                            <option name="Central Area Police Station" value="43.2562236036261,-79.8625898696088">Central Area Police Station
+                                            </option>
+                                            <option name="East Hamilton and Stoney Creek" value="43.2204088701921,-79.7709823819085">East Hamilton and Stoney Creek
+                                            </option>
+                                            <option name="Mountain and Glanbrook" value="43.1979461517718,-79.8765177048048">Mountain and Glanbrook
+                                            </option>
+                                            <option name="Valens Conservation Area" value="43.3836164641819,-80.1396298786846">Valens Conservation Area
+                                            </option>
+                                            <option name="Christie Conservation Area" value="43.2806886368531,-80.0233384483638">Christie Conservation Area
+                                            </option>
+                                            <option name="Binbrook Conservation Area" value="43.1016328661937,-79.8330901995379">Binbrook Conservation Area
+                                            </option>
+                                            <option name="Bayfront Park" value="43.271562542412,-79.8744236438152">Bayfront Park
+                                            </option>
+                                            <option name="Pier 4 Park" value="43.2736627593152,-79.867505929456">Pier 4 Park
+                                            </option>
+                                            <option name="Beach Boulevard" value="43.2809154680256,-79.7833748784442">Beach Boulevard
+                                            </option>
+                                    </select>
+                            </div>
+                            <div id="dir-end" >
+                                <label for="end"><img src="./icons/common/end.png"></label>
+                                <select id='end'>
+                                    <option name="Best Western Premier C Hotel by Carmen's" value="43.1943209959493,-79.8226782303895"> Best Western Premier C Hotel</option>
+                                <option name="Staybridge Suites" value="43.2580063229464,-79.8762525925937">Staybridge Suites
+                                </option>
+                                <option name="Courtyard by Marriott" value="43.2154931500936,-79.8889247185588">Courtyard by Marriott
+                                </option>
+                                <option name="Days Inn Hamilton" value="43.2529443818711,-79.861448793337">Days Inn Hamilton
+                                </option>
+                                <option name="Admiral Inn Hamilton" value="43.26754482797,-79.8859519795869">Admiral Inn Hamilton
+                                </option>
+                                <option name="Comfort Inn Hamilton" value="43.2349568760296,-79.7620837503092">Comfort Inn Hamilton
+                                </option>
+                                <option name="Quality Hotel Hamilton" value="43.2443227988696,-79.7592802374877">Quality Hotel Hamilton
+                                </option>
+                                <option name="Sheraton Hamilton Hotel" value="43.257965513317,-79.872063720161">Sheraton Hamilton Hotel
+                                </option>
+                                <option name="Visitors Inn" value="43.2599858127968,-79.8966373290835">Visitors Inn
+                                </option>
+                                <option name="Hamilton Plaza Hotel" value="43.2548540342615,-79.8645284794698">Hamilton Plaza Hotel
+                                </option>
+                                <option name="Hamilton International Airport" value="43.2548540342615,-79.8645284794698">Hamilton International Airport
+                                </option>
+                                <option name="Stoney Creek Agricultural Airport" value="43.2548540342615,-79.8645284794698">Stoney Creek Agricultural Airport
+                                </option>
+                                <option name="Glider Flying Club" value="43.2548540342615,-79.8645284794698">Glider Flying Club
+                                </option>
+                                <option name="Beverly Arena" value="43.2985097580034,-80.1113269823054">Beverly Arena
+                                </option>
+                                <option name="Bill Friday Lawfield Arena" value="43.2148401210284,-79.8507511804875">Bill Friday Lawfield Arena
+                                </option>
+                                <option name="Carlisle Arena" value="43.3967784960581,-79.9813199607619">Carlisle Arena
+                                </option>
+                                <option name="Coronation Arena" value="43.2646441220182,-79.8962604753025">Coronation Arena
+                                </option>
+                                <option name="Eastwood Arena" value="43.2724188501252,-79.8563297984862">Eastwood Arena
+                                </option>
+                                <option name="Glanbrook Arena" value="43.1300300291582,-79.8387049818608">Glanbrook Arena
+                                </option>
+                                <option name="Harry Howell Arena" value="43.3130883838652,-79.9227884041725">Harry Howell Arena
+                                </option>
+                                <option name="Inch Park Arena" value="43.2370651664004,-79.8595960406354">Inch Park Arena
+                                </option>
+                                <option name="John Bayus Park" value="43.3360327677934,-80.2123361290875">John Bayus Park
+                                </option>
+                                <option name="Flamboro Valley Camping Resort" value="43.3884885932545,-80.0776488050427">Flamboro Valley Camping Resort
+                                </option>
+                                <option name="Fifty Point Campground" value="43.2200504840909,-79.6264160006303">Fifty Point Campground
+                                </option>
+                                <option name="Maple Grove Trailer Park" value="43.4092442492297,-80.1257579295668">Maple Grove Trailer Park
+                                </option>
+                                <option name="Lawson Park" value="43.4178111249237,-80.0022830634885">Lawson Park
+                                </option>
+                                <option name="Chedoke Hospital" value="43.2401015921982,-79.8465907280101">Chedoke Hospital
+                                </option>
+                                <option name="Hamilton General Hospital" value="43.2619434924913,-79.8543349326316">Hamilton General Hospital
+                                </option>
+                                <option name="Juravinski Hospital" value="43.2401305772068,-79.8450013402939">Juravinski Hospital
+                                </option>
+                                <option name="St. Peter's Hospital" value="43.2447575877267,-79.8368705723942">St. Peter's Hospital
+                                </option>
+                                <option name="Ancaster Library" value="43.2253091733592,-79.9766606319237">Ancaster Library
+                                </option>
+                                <option name="Barton Library" value="43.2580316991577,-79.8412189807792">Barton Library
+                                </option>
+                                <option name="Binbrook Library" value="43.1217043785817,-79.8034294718697">Binbrook Library
+                                </option>
+                                <option name="Concession Library" value="43.2410415989336,-79.8513682513742">Concession Library
+                                </option>
+                                <option name="Hamilton Central Library" value="43.2589415605285,-79.8706997154247">Hamilton Central Library
+                                </option>
+                                <option name="Kenilworth Library" value="43.2434982368949,-79.8088416290449">Kenilworth Library
+                                </option>
+                                <option name="Locke Library" value="43.2518228540434,-79.8870220381501">Locke Library
+                                </option>
+                                <option name="Red Hill Library" value="43.2302821141234,-79.7719447194834">Red Hill Library
+                                </option>
+                                <option name="Absinthe" value="43.2570,-79.8676">Absinthe
+                                </option>
+                                <option name="Ale House" value="43.2200,-79.8431">Ale House
+                                </option>
+                                <option name="Artword Artbar" value="43.2634,-79.8667">Artword Artbar
+                                </option>
+                                <option name="Augusta House" value="43.2521,-79.8703">Augusta House
+                                </option>
+                                <option name="Bay City Music Hall" value="43.2736,-79.8664">Bay City Music Hall
+                                </option>
+                                <option name="Boon's House" value="43.2475,-79.7980">Boon's House
+                                </option>
+                                <option name="Lyric Theatre" value="43.2606,-79.8822">Lyric Theatre
+                                </option>
+                                <option name="Dundurn National Historic Site" value="43.2694704660225,-79.8841848584005">Dundurn National Historic Site
+                                </option>
+                                <option name="The Hamilton Military Museum" value="43.2681814438482,-79.8847110509391">The Hamilton Military Museum
+                                </option>
+                                <option name="Art Gallery of Hamilton" value="43.2572413238943,-79.8724073684872">Art Gallery of Hamilton
+                                </option>
+                                <option name="Canadian Football Hall of Fame and Museum" value="43.2518254433982,-79.8312295724646">Canadian Football Hall of Fame and Museum
+                                </option>
+                                <option name="Hamilton Children's Museum" value="43.2435277802489,-79.8257510000106">Hamilton Children's Museum
+                                </option>
+                                <option name="Central Area Police Station" value="43.2562236036261,-79.8625898696088">Central Area Police Station
+                                </option>
+                                <option name="East Hamilton and Stoney Creek" value="43.2204088701921,-79.7709823819085">East Hamilton and Stoney Creek
+                                </option>
+                                <option name="Mountain and Glanbrook" value="43.1979461517718,-79.8765177048048">Mountain and Glanbrook
+                                </option>
+                                <option name="Valens Conservation Area" value="43.3836164641819,-80.1396298786846">Valens Conservation Area
+                                </option>
+                                <option name="Christie Conservation Area" value="43.2806886368531,-80.0233384483638">Christie Conservation Area
+                                </option>
+                                <option name="Binbrook Conservation Area" value="43.1016328661937,-79.8330901995379">Binbrook Conservation Area
+                                </option>
+                                <option name="Bayfront Park" value="43.271562542412,-79.8744236438152">Bayfront Park
+                                </option>
+                                <option name="Pier 4 Park" value="43.2736627593152,-79.867505929456">Pier 4 Park
+                                </option>
+                                <option name="Beach Boulevard" value="43.2809154680256,-79.7833748784442">Beach Boulevard
+                                </option>
+                                </select>
+                            </div>
+                            <div >
+                                <label for="mode"><img src="./icons/common/mode.png"></label>
+                                <select id='mode'>
+                                    <option value="NONE">Not Selected</option>
+                                    <option value="WALKING">Walking</option>
+                                    <option value="DRIVING">Driving</option>
+                                </select>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div class="row">
+                <div id="filter">
+                        <button id="arena"  class="btn btn-dark btn-lg " title="arena" ><img src="icons/filter-icons/arena.png" /></button>
+                        <button id="campground"  class="btn btn-dark btn-lg " title="campground" ><img src="icons/filter-icons/camp.png" /></button>
+                        <button id="livemusic"  class="btn btn-dark btn-lg " title="live music" ><img src="icons/filter-icons/music.png" /></button>
+                        <button id="museum"  class="btn btn-dark btn-lg " title="museum" ><img src="icons/filter-icons/museum.png" /></button>
+                        <button id="beach"  class="btn btn-dark btn-lg " title="beach" ><img src="icons/filter-icons/beach.png" title="beach"/></button>
+                        <button id="library"  class="btn btn-dark btn-lg " title="library" ><img src="icons/filter-icons/library.png" /></button>
+                        <button id="hotel"  class="btn btn-dark btn-lg " title="hotel" ><img src="icons/filter-icons/hotel.png" title="hotel"/></button>
+                        <button id="airport"  class="btn btn-dark btn-lg " title="airport" ><img src="icons/filter-icons/airport.png" /></button>
+                        <button id="policestation"  class="btn btn-dark btn-lg " title="police station" ><img src="icons/filter-icons/police-station.png" /></button>
+                        <button id="hospital"  class="btn btn-dark btn-lg " title="hospital" ><img src="icons/filter-icons/hospital.png"/></button>
+                        <button id="reset"  class="btn btn-dark btn-lg " title="reset" ><img src="icons/common/reset.png"></button>
+                </div>
+        </div>
+        <div class="row">
+            <div id="map-body">
+                <div id="map"></div>
+                <div id="direction-instructions">Direction instructions goes here</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src=./js/app.js></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRkFFoRxOfNNfDxmoerkW8I8ICffwdF68&callback=initMap"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

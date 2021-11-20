@@ -1,0 +1,68 @@
+body{
+    padding:10px 10px 2.5px 10px;
+    font-family: 'Oswald', sans-serif;
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("../img/background.jpg");
+}
+h5{
+    font-family: 'Pacifico', cursive;
+}
+#map-body{
+    display: flex;
+}
+#my-location{
+    display: flex;
+}
+#location-form{
+    display: flex;
+    margin:10px 0px 0px 2px;
+}
+#location-button{
+    margin:0px 5px 0px 0px;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+#text-title{
+    margin:5px 5px 0px 5px;
+}
+#location-input{
+    height:50px;
+}
+#location-form button{
+    height:50px;
+    margin: 0px 0px 0px 5px;
+}
+#directions{
+    display: flex;
+}
+#direction-form{
+    display: inline;
+}
+#filter{
+    display: flex;
+    align-items: center;
+}
+#filter button{
+    margin: 2px;
+    border-radius: 50%;
+    opacity: 1;
+}
+#filter button:hover{
+    opacity:0.6;
+}
+#map{
+    height:70vh;
+    width:160vh; 
+    margin:5px 5px 0px 5px;
+    border: 2px solid black;
+}
+#direction-instructions{
+    width:30%;
+    max-height:70vh ;
+    border: 2px solid black;
+    background-color: #F7F6E7;
+    overflow-y: auto;
+    padding:5px 5px 0px 10px;
+    margin:5px 5px 0px 5px;
+}
+#direction-instructions h6{
+    font-family: 'Pacifico', cursive;
+}
