@@ -29,3 +29,4 @@ Axios to send requests
 Jquery
 https://bennettfeely.com/clippy/ to crop the button
 
+PS: add your google api key to index.html
